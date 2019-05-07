@@ -11,7 +11,7 @@ import model.JoinVO;
 
 public class JoinDAO {
 	//관리자 등록
-	public boolean getManagerRegister(JoinVO jvo) throws Exception {
+	public boolean getManagerRegiste(JoinVO jvo) throws Exception {
 		
 		String sql= "insert into managerjoin " + "(id, password, name)" 
 		+ " values " + "(?, ?, ?)";

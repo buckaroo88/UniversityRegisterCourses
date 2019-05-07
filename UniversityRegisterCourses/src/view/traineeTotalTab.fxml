@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import javafx.scene.layout.BorderPane?>
-
-<BorderPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
-</BorderPane>
-
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Button?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="control.TraineeTotalTabController" prefHeight="500"
+	prefWidth="700">
+	<children>
+		<Label text="수강 신청 전체 목록" layoutX="50.0" layoutY="30.0" />
+		<ComboBox fx:id="cbx_searchList" layoutX="50.0"
+			layoutY="50.0" promptText="검색 분류 선택" />
+		<TextField fx:id="txtSearchWord" layoutX="175.0"
+			layoutY="50.0" promptText="검색어" />
+		<Button fx:id="btnSearch" text="검색" layoutX="320.0"
+			layoutY="50.0" />
+		<Label text="수강 신청 " layoutX="375.0" layoutY="54.0" />
+		<Label fx:id="lblCount" text="" layoutX="450.0" layoutY="54.0" />
+		<TableView fx:id="traineeTatolTableView" layoutX="50.0"
+			layoutY="80.0" prefHeight="340" prefWidth="903">
+		</TableView>
+	</children>
+</AnchorPane>

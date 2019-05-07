@@ -1,8 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.BorderPane?>
-
-<BorderPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
-</BorderPane>
-
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="control.SubjectTabController" prefHeight="500"
+	prefWidth="700">
+	<children>
+		<Label text="학과 등록" layoutX="50.0" layoutY="30.0" />
+		<Label text="관리자명 : " layoutX="110.0" layoutY="30.0" />
+		<Label fx:id="lblManagerName" text="" layoutX="170.0"
+			layoutY="30.0" />
+		<Label text="학과 번호 : " layoutX="50.0" layoutY="72.0" />
+		<TextField fx:id="txtSubjectNum" layoutX="115.0"
+			layoutY="70.0" promptText="2 글자 입력" />
+		<Label text="학 과 명 : " layoutX="50.0" layoutY="102.0" />
+		<TextField fx:id="txtSubjectName" layoutX="115.0"
+			layoutY="100.0" />
+		<Button fx:id="btnInsert" layoutX="50.0" layoutY="150.0"
+			text="등록" />
+		<Button fx:id="btnUpdate" layoutX="100.0" layoutY="150.0"
+			text="수정" />
+		<Button fx:id="btnDelete" layoutX="150.0" layoutY="150.0"
+			text="삭제" />
+		<Button fx:id="btnRead" layoutX="200.0" layoutY="150.0"
+			text="읽기" />
+		<Label text="학과 목록" layoutX="350.0" layoutY="30.0" />
+		<TableView fx:id="subjectTableView" layoutX="350.0"
+			layoutY="50.0" prefHeight="370" prefWidth="300">
+		</TableView>
+	</children>
+</AnchorPane>

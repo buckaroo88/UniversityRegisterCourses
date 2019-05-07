@@ -1,8 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.BorderPane?>
-
-<BorderPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
-</BorderPane>
-
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="control.StudentTabController" prefHeight="500"
+	prefWidth="1000">
+	<children>
+		<Label text="학생 등록" layoutX="35.0" layoutY="30.0" />
+		<Label text="학과명 : " layoutX="35.0" layoutY="52.0" />
+		<ComboBox fx:id="cbx_subjectName" layoutX="100.0"
+			layoutY="50.0" promptText="선택" />
+		<Label text="학 번 : " layoutX="35.0" layoutY="82.0" />
+		<TextField fx:id="txtsd_num" layoutX="100.0" layoutY="80.0" />
+		<Label text="이 름 : " layoutX="35.0" layoutY="112.0" />
+		<TextField fx:id="txtsd_name" layoutX="100.0"
+			layoutY="110.0" />
+		<Label text="아이디 : " layoutX="35.0" layoutY="142.0" />
+		<TextField fx:id="txtsd_id" layoutX="100.0" layoutY="140.0" />
+		<Button fx:id="btnIdCheck" text="ID 체크" layoutX="240.0"
+			layoutY="140.0" />
+		<Label text="비밀번호 : " layoutX="35.0" layoutY="172.0" />
+		<PasswordField fx:id="txtsd_passwd" layoutX="100.0"
+			layoutY="170.0" />
+		<Label text="생년원일 : " layoutX="35.0" layoutY="202.0" />
+		<TextField fx:id="txtsd_birthday" layoutX="100.0"
+			layoutY="200.0" promptText="20010101" />
+		<Label text="연락처 : " layoutX="35.0" layoutY="232.0" />
+		<TextField fx:id="txtsd_phone" layoutX="100.0"
+			layoutY="230.0" promptText="01012341234" />
+		<Label text="주 소 : " layoutX="35.0" layoutY="262.0" />
+		<TextField fx:id="txtsd_address" layoutX="100.0"
+			layoutY="260.0" />
+		<Label text="이메일 : " layoutX="35.0" layoutY="292.0" />
+		<TextField fx:id="txtsd_email" layoutX="100.0"
+			layoutY="290.0" />
+		<Button fx:id="btnStudentInsert" text="학생등록" layoutX="35.0"
+			layoutY="350.0" />
+		<Button fx:id="btnStudentUpdate" text="학생정보수정" layoutX="105.0"
+			layoutY="350.0" />
+		<Button fx:id="btnStudentInit" text="취소" layoutX="200.0"
+			layoutY="350.0" />
+		<Label text="학생 목록" layoutX="300.0" layoutY="30.0" />
+		<Button fx:id="btnStudentTatolList" text="학생 전체"
+			layoutX="360.0" layoutY="25.0" />
+		<TableView fx:id="studentTableView" layoutX="300.0"
+			layoutY="55.0" prefHeight="370" prefWidth="700"></TableView>
+	</children>
+</AnchorPane>

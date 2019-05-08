@@ -280,7 +280,7 @@ public class StudentDAO {
 			int cols = rsmd.getColumnCount();
 			
 			for(int i = 1; i<=cols; i++) {
-				columnName.add(rsmd.getCatalogName(i));
+				columnName.add(rsmd.getColumnName(i));
 			}
 		}catch (SQLException se) {
 			System.out.println(se);
@@ -304,7 +304,7 @@ public class StudentDAO {
 	public boolean getStudentUpdate(int no, String sd_passwd, String sd_birthday, String sd_phone,
 			String sd_address, String sd_email) throws Exception {
 		String sql = "update student set sd_passwd=?, sd_birthday=?, sd_phone=?,"
-				+ " sd_address=?, sd_email=?, where no=?";
+				+ " sd_address=?, sd_email=? where no=?";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		boolean studentUpdateSucess = false;

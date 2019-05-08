@@ -1,8 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.BorderPane?>
-
-<BorderPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/"
+	fx:controller="control.TraineeController" prefHeight="500.0"
+	prefWidth="1000.0">
+	<top>
+		<VBox>
+			<children>
+				<MenuBar>
+					<menus>
+						<Menu text="학사관리">
+							<items>
+								<MenuItem text="로그아웃" fx:id="menuLogout">
+								</MenuItem>
+								<MenuItem text="종료" fx:id="menuExit">
+								</MenuItem>
+							</items>
+						</Menu>
+					</menus>
+					<Menu text="도움말">
+						<items>
+							<MenuItem text="프로그램 정보" fx:id="menuInfo">
+							</MenuItem>
+						</items>
+					</Menu>
+				</MenuBar>
+			</children>
+		</VBox>
+	</top>
+	<center>
+		<TabPane tabClosingPolicy="UNAVAILABLE">
+			<tabs>
+				<Tab text="수강 신청 ">
+					<content>
+						<AnchorPane prefHeight="500" prefWidth="700">
+							<children>
+								<Label text="수강 신청" layoutX="50.0" layoutY="30.0" />
+								<Label text="학생 이름 : " layoutX="50.0" layoutY="62.0" />
+								<TextField fx:id="txtStudentName" layoutX="115.0"
+									layoutY="60.0" />
+								<Label text="학 번 : " layoutX="50.0" layoutY="92.0" />
+								<TextField fx:id="txtStudentNum" layoutX="115.0"
+									layoutY="90.0" />
+								<Label text="학 과 명 : " layoutX="50.0" layoutY="122.0" />
+								<TextField fx:id="txtSubjectName" layoutX="115.0"
+									layoutY="120.0" />
+								<Label text="수강 과목 선택 " layoutX="50.0" layoutY="172.0" />
+								<fx:define>
+									<ToggleGroup fx:id="sectionGroup" />
+								</fx:define>
+								<RadioButton fx:id="rbMajor" userData="major"
+									text="전공" toggleGroup="$sectionGroup" layoutX="50.0"
+									layoutY="190.0" />
+								<RadioButton fx:id="rbMinor" userData="minor"
+									text="부전공" toggleGroup="$sectionGroup" layoutX="110.0"
+									layoutY="190.0" />
+								<RadioButton fx:id="rbCulture" userData="culture"
+									text="교양" toggleGroup="$sectionGroup" layoutX="180.0"
+									layoutY="190.0" />
+								<ComboBox fx:id="cbx_subjectName" layoutX="50.0"
+									layoutY="220.0" promptText="선택" />
+								<TextField fx:id="txtSectionName" layoutX="170.0"
+									promptText="수강 과목 선택" layoutY="220.0" prefWidth="100" />
+								<Button fx:id="btnTraineeInsert" layoutX="50.0"
+									layoutY="290.0" text="수강 신청" />
+								<Button fx:id="btnTraineeCancel" layoutX="127.0"
+									layoutY="290.0" text="수강 취소" />
+								<Button fx:id="btnTraineeExit" layoutX="207.0"
+									layoutY="290.0" text="종료" />
+								<Label text="수강 신청 목록" layoutX="350.0" layoutY="30.0" />
+								<TableView fx:id="traineeTableView" layoutX="350.0"
+									layoutY="50.0" prefHeight="370" prefWidth="500">
+								</TableView>
+							</children>
+						</AnchorPane>
+					</content>
+				</Tab>
+			</tabs>
+		</TabPane>
+	</center>
 </BorderPane>
-

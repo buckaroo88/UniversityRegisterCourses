@@ -234,7 +234,7 @@ public class StudentTabController implements Initializable{
 			searchResult = (boolean) sDao.getStudentIdOverlap(searchId);
 			
 			if(!searchResult && !searchId.contentEquals("")) {
-				txtsd_id.setDisable(true);
+				//txtsd_id.setDisable(true);
 				Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setTitle("아이디 중복 검사");
 				alert.setHeaderText(searchId + " 를 사용할 수 있습니다.");
@@ -242,9 +242,9 @@ public class StudentTabController implements Initializable{
 				alert.showAndWait();
 				
 				btnStudentInsert.setDisable(false);
-				btnIdCheck.setDisable(true);
+				//btnIdCheck.setDisable(true);
 			}else if(searchId.contentEquals("")) {
-				btnStudentInsert.setDisable(true);
+				//btnStudentInsert.setDisable(true);
 				btnIdCheck.setDisable(false);
 				Alert alert = new Alert(AlertType.WARNING);
 				alert.setTitle("아이디 중복 검색");
@@ -252,7 +252,7 @@ public class StudentTabController implements Initializable{
 				alert.setContentText("등록할 아이디를 입력하세요!");
 				alert.showAndWait();
 			}else {
-				btnStudentInsert.setDisable(true);
+				//btnStudentInsert.setDisable(true);
 				btnIdCheck.setDisable(false);
 				txtsd_id.clear();
 				
@@ -344,13 +344,13 @@ public class StudentTabController implements Initializable{
 
 				txtsd_num.setEditable(false);
 				txtsd_name.setEditable(false);
-				txtsd_id.setEditable(false);
+				//txtsd_id.setEditable(false);
 				
 				btnIdCheck.setDisable(true);
 				cbx_subjectName.setDisable(true);
 				btnStudentUpdate.setDisable(false);
 				btnStudentInit.setDisable(false);
-				btnStudentInsert.setDisable(true);
+				//btnStudentInsert.setDisable(true);
 			}catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -391,7 +391,7 @@ public class StudentTabController implements Initializable{
 			cbx_subjectName.setDisable(false);
 			btnStudentUpdate.setDisable(true);
 			btnStudentInit.setDisable(true);
-			btnStudentInsert.setDisable(true);
+			//btnStudentInsert.setDisable(true);
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -429,7 +429,7 @@ public class StudentTabController implements Initializable{
 				cbx_subjectName.setDisable(false);
 				btnStudentUpdate.setDisable(true);
 				btnStudentInit.setDisable(true);
-				btnStudentInsert.setDisable(true);
+				//btnStudentInsert.setDisable(true);
 			}
 		}catch(Exception e) {
 			e.printStackTrace();

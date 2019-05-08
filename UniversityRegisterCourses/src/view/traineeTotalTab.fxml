@@ -18,7 +18,7 @@
 			layoutY="50.0" />
 		<Label text="수강 신청 " layoutX="375.0" layoutY="54.0" />
 		<Label fx:id="lblCount" text="" layoutX="450.0" layoutY="54.0" />
-		<TableView fx:id="traineeTatolTableView" layoutX="50.0"
+		<TableView fx:id="traineeTotalTableView" layoutX="50.0"
 			layoutY="80.0" prefHeight="340" prefWidth="903">
 		</TableView>
 	</children>

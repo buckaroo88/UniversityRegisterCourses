@@ -221,7 +221,7 @@ public class StudentTabController implements Initializable{
 	// 학생 아이디 중복 체크
 	public void handlerBtnIdCheckAction(ActionEvent event) {
 		btnStudentInsert.setDisable(false);
-		btnIdCheck.setDisable(true);
+		//btnIdCheck.setDisable(true);
 		
 		StudentDAO sDao = null;
 		
@@ -286,6 +286,7 @@ public class StudentTabController implements Initializable{
 			// 학번은 8자리 (연도2자리 + 학과2자리 + 일련번호4자리 ex)06010001)
 			SimpleDateFormat sdf = new SimpleDateFormat("yy");
 			sdYear = sdf.format(new Date());
+			serialNumber = sdao.getStudentCount(selectSubjectNum);
 		}catch (Exception e) {
 			e.printStackTrace();
 		}

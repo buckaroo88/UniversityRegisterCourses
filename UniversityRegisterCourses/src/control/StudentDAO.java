@@ -50,7 +50,7 @@ public class StudentDAO {
 
 	// 학생 로그인
 	public boolean getLogin(String loginId, String loginPassword) throws Exception {
-		String sql = "select * from student where sd_id = ? and sd_password = ?";
+		String sql = "select * from student where sd_id = ? and sd_passwd = ?";
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;

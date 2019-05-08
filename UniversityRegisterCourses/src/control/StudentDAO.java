@@ -402,7 +402,7 @@ public class StudentDAO {
 	public ArrayList<SubjectVO> subjectTotalList() throws Exception {
 		ArrayList<SubjectVO> list = new ArrayList<>();
 		
-		String sql = "select s_name from subject oreder by no";
+		String sql = "select s_name from subject order by no";
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;

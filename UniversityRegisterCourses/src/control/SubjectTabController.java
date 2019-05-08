@@ -50,7 +50,7 @@ public class SubjectTabController implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 		try {
 			lblManagerName.setText(LoginController.managerName);
-
+			
 			// 학과 등록 초기화
 			btnUpdate.setDisable(true);
 			btnDelete.setDisable(true);
@@ -60,17 +60,17 @@ public class SubjectTabController implements Initializable {
 			TableColumn colNo = new TableColumn("NO.");
 			colNo.setPrefWidth(50);
 			colNo.setStyle("-fx-allignment: CENTER");
-			colNo.setCellFactory(new PropertyValueFactory<>("no"));
+			colNo.setCellValueFactory(new PropertyValueFactory<>("no"));
 
 			TableColumn colSNum = new TableColumn("학과 번호");
 			colSNum.setPrefWidth(90);
 			colSNum.setStyle("-fx-allignment: CENTER");
-			colSNum.setCellFactory(new PropertyValueFactory<>("s_num"));
+			colSNum.setCellValueFactory(new PropertyValueFactory<>("s_num"));
 
 			TableColumn colSName = new TableColumn("학 과 명");
 			colSName.setPrefWidth(160);
 			colSName.setStyle("-fx-allignment: CENTER");
-			colSName.setCellFactory(new PropertyValueFactory<>("s_name"));
+			colSName.setCellValueFactory(new PropertyValueFactory<>("s_name"));
 
 			subjectTableView.setItems(subjectDataList);
 			subjectTableView.getColumns().addAll(colNo, colSNum, colSName);

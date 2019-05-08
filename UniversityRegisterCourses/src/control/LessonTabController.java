@@ -58,9 +58,9 @@ public class LessonTabController implements Initializable {
 			colLessonNum.setStyle("-fx-allignment: CENTER");
 			colLessonNum.setCellValueFactory(new PropertyValueFactory<>("l_num"));
 			TableColumn colLessonName = new TableColumn("과목명");
-			colLessonNum.setPrefWidth(160);
-			colLessonNum.setStyle("-fx-allignment: CENTER");
-			colLessonNum.setCellValueFactory(new PropertyValueFactory<>("l_name"));
+			colLessonName.setPrefWidth(160);
+			colLessonName.setStyle("-fx-allignment: CENTER");
+			colLessonName.setCellValueFactory(new PropertyValueFactory<>("l_name"));
 
 			lessonTableView.setItems(lessonDataList);
 			lessonTableView.getColumns().addAll(colLessonNo, colLessonNum, colLessonName);

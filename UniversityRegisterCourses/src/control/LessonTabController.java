@@ -109,7 +109,7 @@ public class LessonTabController implements Initializable {
 
 				Alert alert = new Alert(AlertType.INFORMATION);
 				alert.setTitle("과목 입력");
-				alert.setHeaderText("txtSubjectName.getText()" + " 과목이 성공적으로 추가 되었습니다.");
+				alert.setHeaderText(txtLessonName.getText() + " 과목이 성공적으로 추가 되었습니다.");
 				alert.setContentText("다음 과목을 입력하세요.");
 				alert.showAndWait();
 

@@ -108,7 +108,7 @@ public class SubjectTabController implements Initializable {
 
 				btnUpdate.setDisable(false);
 				btnDelete.setDisable(false);
-				btnInsert.setDisable(true);
+				//btnInsert.setDisable(true);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

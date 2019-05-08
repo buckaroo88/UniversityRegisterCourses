@@ -277,7 +277,7 @@ public class StudentTabController implements Initializable{
 	public void handlerCbx_subjectNameActoion(ActionEvent event) {
 		SubjectDAO sudao = new SubjectDAO();
 		StudentDAO sdao = new StudentDAO();
-		String serialnumber = ""; //일련번호
+		String serialNumber = ""; //일련번호
 		String sdYear = "";
 	
 		try {
@@ -318,7 +318,7 @@ public class StudentTabController implements Initializable{
 		}
 	
 	//학생 테이브리 뷰 더블 클릭 이벤트 핸들러
-	public void handlerStudentTableViewAvtoion(MouseEvent event) {
+	public void handlerStudentTableViewActoion(MouseEvent event) {
 		if (event.getClickCount() == 2) {
 			try {
 				selectStudent = studentTableView.getSelectionModel().getSelectedItems();

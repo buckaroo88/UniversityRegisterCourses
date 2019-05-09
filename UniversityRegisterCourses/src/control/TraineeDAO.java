@@ -320,11 +320,9 @@ public class TraineeDAO {
 	// 전체 수강 탭에서 학번 검색
 	public ArrayList<TraineeVO> getTraineeStudentNumSearchList(String sd_num) throws Exception {
 		ArrayList<TraineeVO> list = new ArrayList<>();
-
 		String sql = "select tr.no as no, tr.sd_num, le.l_name as l_num, st.sd_name as sd_name,t_section, t_date "
 				+ "from trainee tr, lesson le , student st "
 				+ "where tr.l_num = le.l_num and tr.sd_num = st.sd_num and tr.sd_num = ? order by t_date";
-
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -360,19 +358,15 @@ public class TraineeDAO {
 			}
 		}
 		return list;
-
 	}
 
 	// 전체 수강 탭에서 과목 검색
 	public ArrayList<TraineeVO> getTraineeSubjectSearchList(String l_name) throws Exception {
 		String l_num = getLessonNum(l_name);
-
 		ArrayList<TraineeVO> list = new ArrayList<>();
-
-		String sql = "select tr.no, tr.sd_num, le.l_name as l_num, st.sd_name as sd_name, t_section, t_date"
-				+ "from trainee tr, lesson le, student st "
+		String sql = "select tr.no as no, tr.sd_num, le.l_name as l_num, st.sd_name as sd_name,	t_section, t_date "
+				+ "from trainee tr, lesson le , student st "
 				+ "where tr.l_num = le.l_num and tr.l_num = ? and tr.sd_num = st.sd_num order by t_date";
-
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -388,11 +382,55 @@ public class TraineeDAO {
 				tVo.setSd_num(rs.getString("sd_num"));
 				tVo.setSd_name(rs.getString("sd_name"));
 				tVo.setL_num(rs.getString("l_num"));
-				tVo.setT_section(rs.getString("T_section"));
+				tVo.setT_section(rs.getString("t_section"));
+				tVo.setT_date(rs.getString("t_date"));
+				list.add(tVo);
+			}
+		} catch (SQLException se) {
+			System.out.println(se);
+		} catch (Exception e) {
+			System.out.println(e);
+		} finally {
+			try {
+				if (rs != null)
+					rs.close();
+				if (pstmt != null)
+					pstmt.close();
+				if (con != null)
+					con.close();
+			} catch (SQLException se) {
+			}
+		}
+		return list;
+	}
+
+	// 전체 수강 탭에서 학생 이름 검색
+	public ArrayList<TraineeVO> getTraineeStudentNameSearchList(String sd_name) throws Exception {
+		ArrayList<TraineeVO> list = new ArrayList<>();
+
+		String sql = "select tr.no as no, tr.sd_num, le.l_name as l_num, st.sd_name as sd_name,t_section, t_date "
+				+ "from trainee tr, lesson le , student st "
+				+ "where tr.l_num = le.l_num and tr.sd_num = st.sd_num and st.sd_name = ? order by t_date";
+
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		TraineeVO tVo = null;
+		try {
+			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, sd_name);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				tVo = new TraineeVO();
+				tVo.setNo(rs.getInt("no"));
+				tVo.setSd_num(rs.getString("sd_num"));
+				tVo.setSd_name(rs.getString("sd_name"));
+				tVo.setL_num(rs.getString("l_num"));
+				tVo.setT_section(rs.getString("t_section"));
 				tVo.setT_date(rs.getString("t_date"));
 
 				list.add(tVo);
-
 			}
 
 		} catch (SQLException se) {
@@ -409,54 +447,6 @@ public class TraineeDAO {
 					con.close();
 			} catch (SQLException se) {
 
-			}
-		}
-		return list;
-	}
-
-	// 전체 수강 탭에서 학생 이름 검색
-	public ArrayList<TraineeVO> getTraineeStudentNameSearchList(String sd_name) throws Exception{
-		ArrayList<TraineeVO> list = new ArrayList<>();
-		
-		String sql = "select tr.no as no, tr.sd_num, le.l_num, st.sd_name as sd_name, t_section, t_date"
-					+ "from trainee tr, lesson le, student st"
-					+ "where tr.l_num = le.l_num and tr.sd_num and st.sd_name = ? order by t_date";
-		
-		Connection con = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs =null;
-		TraineeVO tVo = null;
-		try {
-				con = DBUtil.getConnection();
-				pstmt = con.prepareStatement(sql);
-				pstmt.setString(1, sd_name);
-				rs = pstmt.executeQuery();
-				while(rs.next()) {
-					tVo = new TraineeVO();
-					tVo.setNo(rs.getInt("no"));
-					tVo.setSd_num(rs.getString("sd_num"));
-					tVo.setSd_name(rs.getString("sd_name"));
-					tVo.setL_num(rs.getString("l_num"));
-					tVo.setT_section(rs.getString("t_section"));
-					tVo.setT_date(rs.getString("t_date"));
-					
-					list.add(tVo);
-				}
-				
-		}catch(SQLException se) {
-			System.out.println(se);
-		}catch(Exception e) {
-			System.out.println(e);
-		}finally {
-			try {
-					if(rs!=null)
-						rs.close();
-					if(pstmt!=null)
-						pstmt.close();
-					if(con!=null)
-						con.close();
-			}catch(SQLException se) {
-				
 			}
 		}
 		return list;

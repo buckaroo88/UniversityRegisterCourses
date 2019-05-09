@@ -121,7 +121,7 @@ public class TraineeTotalTabController implements Initializable{
 					int columnCount = title.size();
 					
 					if(search.equals("학번")) {
-						list = tDao.getTraineeStudentNameSearchList(searchName);
+						list = tDao.getTraineeStudentNumSearchList(searchName);
 						
 						if(list.size()==0) {
 							txtSearchWord.clear();

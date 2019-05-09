@@ -4,10 +4,10 @@ public class TraineeVO {
 	int no;
 	String sd_num;
 	String sd_name;
-	String L_num;
+	String l_num;
 	String t_section;
 	String t_date;
-	
+
 	public TraineeVO() {
 		super();
 	}
@@ -15,14 +15,14 @@ public class TraineeVO {
 	public TraineeVO(String sd_num, String l_num, String t_section) {
 		super();
 		this.sd_num = sd_num;
-		L_num = l_num;
+		this.l_num = l_num;
 		this.t_section = t_section;
 	}
 
 	public TraineeVO(String sd_num, String l_num, String t_section, String t_date) {
 		super();
 		this.sd_num = sd_num;
-		L_num = l_num;
+		this.l_num = l_num;
 		this.t_section = t_section;
 		this.t_date = t_date;
 	}
@@ -31,7 +31,7 @@ public class TraineeVO {
 		super();
 		this.no = no;
 		this.sd_num = sd_num;
-		L_num = l_num;
+		this.l_num = l_num;
 		this.t_section = t_section;
 		this.t_date = t_date;
 	}
@@ -61,11 +61,11 @@ public class TraineeVO {
 	}
 
 	public String getL_num() {
-		return L_num;
+		return l_num;
 	}
 
 	public void setL_num(String l_num) {
-		l_num = l_num;
+		this.l_num = l_num;
 	}
 
 	public String getT_section() {
@@ -83,7 +83,4 @@ public class TraineeVO {
 	public void setT_date(String t_date) {
 		this.t_date = t_date;
 	}
-	
-	
-	
 }

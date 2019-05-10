@@ -17,6 +17,7 @@ public class Main extends Application {
 			primaryStage.setResizable(false);
 			primaryStage.show();
 		} catch (Exception e) {
+			System.out.println("ㅎㅎ되나요>?");
 			e.printStackTrace();
 		}
 	}
